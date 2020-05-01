@@ -1,12 +1,12 @@
-# go-system
+# base-system
 
-go-system is a set of layout components with custom type-safe style props.
+base-system is a set of React layout components with custom type-safe style props.
 
 ## Usage
 
-Provide a theme using the styled-components ThemeProvider.
+base-system uses styled-components for dynamic style props and theming.
 
-The provided should implement the following interface:
+Provide a theme using the styled-components `ThemeProvider`. The theme should implement the following interface:
 
 ```ts
 const interface {
@@ -32,6 +32,23 @@ export default {
   }
   ...
 }
+```
+
+### Components
+
+```js
+import { ThemeProvider } from 'styled-system'
+import theme from '../theme'
+import { Box } from 'base-system'
+
+export default () => {
+  <ThemeProvider theme={theme}>
+    <Box color='text' bg='secondary'>
+      This text will be black
+    </Box>
+  </ThemeProvider>
+}
+
 ```
 
 
